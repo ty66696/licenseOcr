@@ -1,0 +1,14 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jac.billocr.mapper.LicenseMapper">
+    <resultMap id="LicenseMapper" type="com.jac.billocr.entity.License">
+        <result column="vin" jdbcType="VARCHAR" property="vin"/>
+        <result column="people" jdbcType="VARCHAR" property="people"/>
+        <result column="license_plate" jdbcType="VARCHAR" property="licensePlate"/>
+        <result column="registration_date" jdbcType="VARCHAR" property="registrationDate"/>
+        <result column="nature" jdbcType="VARCHAR" property="nature"/>
+    </resultMap>
+    <insert id="add" parameterType="com.jac.billocr.entity.License">
+        insert into license3 (vin, people, license_plate, registration_date, nature)
+        values (#{vin},#{people},#{licensePlate},#{registrationDate},#{nature});
+    </insert>
+</mapper>

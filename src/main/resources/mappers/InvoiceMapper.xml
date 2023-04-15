@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jac.billocr.mapper.InvoiceMapper">
+    <resultMap id="InvoiceMapper" type="com.jac.billocr.entity.Invoice">
+        <result column="vin" jdbcType="VARCHAR" property="vin"/>
+        <result column="invoice_code" jdbcType="VARCHAR" property="invoiceCode"/>
+        <result column="invoice_number" jdbcType="VARCHAR" property="invoiceNumber"/>
+        <result column="invoice_date" jdbcType="VARCHAR" property="invoiceDate"/>
+        <result column="invoice_price" jdbcType="DECIMAL" property="invoicePrice"/>
+        <result column="invoice_verification" jdbcType="VARCHAR" property="invoiceVerification"/>
+    </resultMap>
+    <insert id="add" parameterType="com.jac.billocr.entity.Invoice">
+        insert into invoice3(vin, invoice_code, invoice_number, invoice_date, invoice_price, invoice_verification) VALUES
+        (#{vin},#{invoiceCode},#{invoiceNumber},#{invoiceDate},#{invoicePrice},#{invoiceVerification});
+    </insert>
+</mapper>
